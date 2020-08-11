@@ -3,11 +3,10 @@ require('httparty')
 BOOKING_YEAR = '2020'
 BOOKING_MONTH = '08'
 BOOKING_DAY = '17'
+BOOKING_DATE = "#{BOOKING_YEAR}-#{BOOKING_MONTH}-#{BOOKING_DAY}"
 
 RESERVATION_URL = "https://www.recreation.gov/api/ticket/availability/facility/300015/monthlyAvailabilitySummaryView?year=#{BOOKING_YEAR}&month=#{BOOKING_MONTH}&day=#{BOOKING_DAY}&inventoryBucket=FIT".freeze
 BOOKING_URL = 'https://www.recreation.gov/ticket/facility/300015'
-
-BOOKING_DATE = "#{BOOKING_YEAR}-#{BOOKING_MONTH}-#{BOOKING_DAY}"
 
 loop do
   http_response = HTTParty.get(RESERVATION_URL).body
